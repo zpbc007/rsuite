@@ -43,7 +43,7 @@ class Toggle extends React.Component {
 
   handleChange(event) {
     const { onChange, disabled } = this.props;
-    const checked = !this.state.checked;
+    const checked = !this.getCheckedStatus();
 
     if (disabled) {
       return;
