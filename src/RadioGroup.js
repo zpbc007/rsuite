@@ -26,7 +26,6 @@ class RadioGroup extends React.Component {
 
   handleChange(value, event) {
 
-
     const { onChange } = this.props;
     const radios = values(this.radios);
     const shouldChange = (should) => {
@@ -51,6 +50,7 @@ class RadioGroup extends React.Component {
       name,
       value,
       children,
+      onChange,
       ...props
     } = this.props;
 

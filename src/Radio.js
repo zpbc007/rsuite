@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import _ from 'lodash';
 
 const propTypes = {
   id: PropTypes.string,
@@ -12,6 +13,7 @@ const propTypes = {
   defaultChecked: PropTypes.bool,
   onChange: PropTypes.func,
   inputRef: PropTypes.func,
+  defaultValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   value: PropTypes.any,   // eslint-disable-line react/forbid-prop-types
 };
 
@@ -45,7 +47,8 @@ class Radio extends React.Component {
     }
 
     this.setState({ checked: target.checked }, () => {
-      onChange && onChange(value || target.checked, event);
+      const nextValue = _.isUndefined(value) ? target.checked : value;
+      onChange && onChange(nextValue, event);
     });
 
   }
@@ -55,14 +58,15 @@ class Radio extends React.Component {
       inline,
       title,
       name,
+      id,
       className,
       children,
-      onChange,
       disabled,
       style,
       inputRef,
-      ...props,
-      } = this.props;
+      defaultValue,
+      value
+    } = this.props;
 
     const { checked } = this.state;
     const classes = classNames({
@@ -76,9 +80,11 @@ class Radio extends React.Component {
     const input = (
       <span className={classNames('radio-wrapper', { checked })}>
         <input
-          {...props}
+          id={id}
           type="radio"
           ref={inputRef}
+          value={value}
+          defaultValue={defaultValue}
           name={name}
           disabled={disabled}
           onChange={this.handleChange}
