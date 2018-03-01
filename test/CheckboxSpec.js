@@ -53,7 +53,7 @@ describe('Checkbox', () => {
   it('Should have a `Test` value', () => {
     let value = 'Test';
     let instance = ReactTestUtils.renderIntoDocument(
-      <Checkbox defaultValue={value}>Test</Checkbox>
+      <Checkbox value={value}>Test</Checkbox>
     );
     assert.equal(findDOMNode(instance).querySelector('input').value, value);
   });

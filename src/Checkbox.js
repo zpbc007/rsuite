@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import isUndefined from 'lodash/isUndefined';
 
+
 const propTypes = {
   title: PropTypes.string,
   inline: PropTypes.bool,
@@ -40,7 +41,8 @@ class Checkbox extends React.Component {
     }
 
     this.setState({ checked }, () => {
-      onChange && onChange(value ? target.value : checked, event);
+      const nextValue = isUndefined(value) ? checked : target.value;
+      onChange && onChange(nextValue, event);
     });
   }
 

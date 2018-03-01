@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import _ from 'lodash';
+import isUndefined from 'lodash/isUndefined';
 
 const propTypes = {
   id: PropTypes.string,
@@ -13,7 +13,6 @@ const propTypes = {
   defaultChecked: PropTypes.bool,
   onChange: PropTypes.func,
   inputRef: PropTypes.func,
-  defaultValue: PropTypes.any, // eslint-disable-line react/forbid-prop-types
   value: PropTypes.any,   // eslint-disable-line react/forbid-prop-types
 };
 
@@ -47,7 +46,7 @@ class Radio extends React.Component {
     }
 
     this.setState({ checked: target.checked }, () => {
-      const nextValue = _.isUndefined(value) ? target.checked : value;
+      const nextValue = isUndefined(value) ? target.checked : value;
       onChange && onChange(nextValue, event);
     });
 
@@ -64,7 +63,6 @@ class Radio extends React.Component {
       disabled,
       style,
       inputRef,
-      defaultValue,
       value
     } = this.props;
 
@@ -84,7 +82,6 @@ class Radio extends React.Component {
           type="radio"
           ref={inputRef}
           value={value}
-          defaultValue={defaultValue}
           name={name}
           disabled={disabled}
           onChange={this.handleChange}

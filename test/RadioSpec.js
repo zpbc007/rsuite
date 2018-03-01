@@ -58,7 +58,7 @@ describe('Radio', () => {
   it('Should have a `Test` value', () => {
     const value = 'Test';
     const instance = ReactTestUtils.renderIntoDocument(
-      <Radio defaultValue={value}>Test</Radio>
+      <Radio value={value}>Test</Radio>
     );
     const instanceDom = findDOMNode(instance);
     assert.equal(instanceDom.querySelector('input').value, value);
