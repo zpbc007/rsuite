@@ -1,0 +1,9 @@
+{
+  "presets": ["env", "react", "stage-2", "flow"],
+  "plugins": [
+    // "transform-runtime",
+    "transform-class-properties",
+    "flow-react-proptypes",
+    "transform-react-flow-handled-props"
+  ]
+}

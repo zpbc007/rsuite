@@ -1,0 +1,40 @@
+.box-shadow(@x: 0px, @y: 2px, @blur: 3px, @color: rgba(0, 0, 0, 0.28)) {
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+//文字省略号
+// @substract单位为%
+.ellipsis-basic() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+
+//清除浮动
+.clearfix() {
+  &:before, &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//opacity
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.item-transition(@transition: background-color .3s linear, color 0.2s ease-in;
+) {
+  transition: @transition;
+}

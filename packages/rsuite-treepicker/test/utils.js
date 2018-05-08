@@ -1,0 +1,15 @@
+import { constants } from 'rsuite-utils/lib/Picker';
+
+export const delay = (timeout) =>
+  new Promise((resolve) => setTimeout(resolve, timeout));
+
+export default delay;
+const { namespace } = constants; // .rs-picker
+
+export const classPrefix = `${namespace}-tree`;
+export const treeViewCls = `${classPrefix}-view`;
+export const treeNodeActiveCls = `${treeViewCls}-node-active`;
+export const treeNodeDisabledCls = `${treeViewCls}-node-disabled`;
+export const nodeChildrenOpenCls = `${treeViewCls}-open`;
+export const expandIconWrapperCls = `${treeViewCls}-node-expand-icon-wrapper`;
+export const expandIconCls = `${treeViewCls}-node-expand-icon`;

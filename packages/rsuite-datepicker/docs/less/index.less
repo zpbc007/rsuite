@@ -1,0 +1,57 @@
+@import '../../src/less/index.less';
+@import '~rsuite-theme/dist/less/rsuite.less';
+@import '~react-markdown-reader/less/highlight.less';
+@import '~react-code-view/lib/less/index.less';
+@import '~rsuite-docs/lib/less/index.less';
+
+@base-color: #3385ff;
+
+.doc-page {
+  margin: 70px 0;
+}
+
+.sub-title {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+blockquote {
+  font-size: 14px;
+}
+
+.sidebar {
+  border-right: 1px solid #f1f1f1;
+}
+
+.field {
+
+  margin-bottom: 10px;
+  .rsuite-datepicker{
+    width: 220px;
+    margin-bottom: 10px;
+  }
+}
+
+.target-fix {
+  position: relative;
+  top: -70px; // 偏移值
+  display: block;
+  height: 0;
+  border: none;
+}
+
+.example-item {
+  margin: 10px 0;
+  width: 320px;
+}
