@@ -10,7 +10,7 @@ import { MenuWrapper } from 'rsuite-utils/lib/Picker';
 
 import PickerToggle from '../_picker/PickerToggle';
 import getToggleWrapperClassName from '../_picker/getToggleWrapperClassName';
-import Calendar from '../Calendar';
+import Calendar from '../Calendar/Calendar';
 import Toolbar from './Toolbar';
 import { defaultProps, getUnhandledProps, prefix, createChainedFunction } from '../utils';
 import disabledTime, { calendarOnlyProps } from '../utils/disabledTime';
@@ -348,9 +348,6 @@ class DatePicker extends React.Component<Props, States> {
         onToggleTimeDropdown={this.toggleTimeDropdown}
         onChangePageDate={this.handleChangePageDate}
         onChangePageTime={this.handleChangePageTime}
-        calendarRef={ref => {
-          this.calendar = ref;
-        }}
       />
     );
   }

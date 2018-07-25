@@ -30,6 +30,7 @@ export default {
     lengthMenuInfo: '{0} / page',
     totalInfo: 'total: {0}'
   },
+  Calendar,
   DatePicker: {
     ...Calendar
   },
